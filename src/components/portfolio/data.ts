@@ -19,7 +19,7 @@ export const PROFILE = {
 };
 
 export const STATS = [
-  { label: "Experience", value: "1.4+", suffix: "Yrs" },
+  { label: "Experience", value: "2+", suffix: "Yrs" },
   { label: "AI Agents Built", value: "20+" },
   { label: "MCP Servers", value: "15+" },
   { label: "GenAI Pipelines", value: "30+" },
@@ -103,6 +103,24 @@ export const EXPERIENCE = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "Symposium",
+    year: "2025",
+    category: "Agentic AI",
+    tagline: "A curious experiment: what if AI agents communicated the way humans actually do in a group conversation?",
+    description: "I was thinking about how AI agents work together. There are lots of frameworks out there where agents collaborate on tasks, build things, solve problems. But something kept nagging at me: when agents talk to each other, it doesn't sound like humans talking. It sounds like functions calling functions. And I started wondering — what would it actually take to make an agent conversation feel like a real meeting?\n\nSo I started thinking about what happens when humans sit in a room and talk. How do we actually decide who speaks next? What's the difference between what we think and what we say? Why do we remember things differently? And I realized there are patterns in human conversation that most of the agent frameworks are not replicating honestly.\n\nThat's what Symposium is. One attempt at building a framework where agents talk more like humans actually do.",
+    highlights: [],
+    tech: ["Agentic Frameworks", "LLM Conversation", "NLP Patterns"],
+  },
+  {
+    title: "Smriti",
+    year: "2025",
+    category: "Voice AI & Graph DB",
+    tagline: "A second brain that doesn't store what you know — it remembers who you are.",
+    description: "Smriti is a voice-first agent that quietly maintains a living model of you. You talk to it like a friend; it listens, responds, and silently rewires a markdown graph in the background — a graph that, over time, becomes the closest thing to a digital snapshot of your awakening mind.\n\nThe vault sits in a plain folder. Open it in Obsidian and you'll see the shape of your own life: the people closest to you, the projects you're inside of right now, the events on the horizon, the threads you're chasing this week — all linked, all dated, all evolving as you keep talking.\n\nYou never edit a file. You just speak.",
+    highlights: [],
+    tech: ["Voice Agent", "Obsidian API", "Markdown Graph", "RAG"],
+  },
   {
     title: "Hierarchical MCP Server Architecture",
     year: "2025",

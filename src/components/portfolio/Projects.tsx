@@ -61,14 +61,29 @@ export function Projects() {
                 </div>
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
               </div>
-              <ul className="mt-5 space-y-1.5">
-                {p.highlights.map((h) => (
-                  <li key={h} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="h-1 w-1 rounded-full bg-accent" />
-                    {h}
-                  </li>
-                ))}
-              </ul>
+              
+              {(p as any).tagline && (
+                <p className="mt-3.5 text-xs font-semibold text-foreground/85 italic border-l border-accent/40 pl-2">
+                  "{(p as any).tagline}"
+                </p>
+              )}
+
+              {(p as any).description ? (
+                <div className="mt-3 space-y-2 text-xs text-muted-foreground leading-relaxed">
+                  {((p as any).description as string).split("\n\n").map((para, idx) => (
+                    <p key={idx}>{para}</p>
+                  ))}
+                </div>
+              ) : (
+                <ul className="mt-5 space-y-1.5">
+                  {p.highlights.map((h) => (
+                    <li key={h} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span className="h-1 w-1 rounded-full bg-accent" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <div className="mt-6 flex flex-wrap gap-1.5">
                 {p.tech.map((t) => (
                   <span
