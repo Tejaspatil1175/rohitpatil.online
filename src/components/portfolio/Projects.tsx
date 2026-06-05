@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useMemo, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { Section } from "./Section";
 import { PROJECTS } from "./data";
 
@@ -57,9 +58,32 @@ export function Projects() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
                     {p.category} · {p.year}
                   </div>
-                  <h3 className="mt-2 font-display text-xl font-semibold">{p.title}</h3>
+                  {(p as any).github ? (
+                    <a
+                      href={(p as any).github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/link inline-flex items-center gap-1.5 hover:text-primary transition-colors mt-2"
+                    >
+                      <h3 className="font-display text-xl font-semibold group-hover/link:underline">{p.title}</h3>
+                    </a>
+                  ) : (
+                    <h3 className="mt-2 font-display text-xl font-semibold">{p.title}</h3>
+                  )}
                 </div>
-                <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
+                {(p as any).github ? (
+                  <a
+                    href={(p as any).github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full glass hover:bg-primary/20 text-muted-foreground hover:text-foreground transition-all duration-300 shadow-sm flex items-center justify-center"
+                    title="View GitHub Repository"
+                  >
+                    <FaGithub className="h-5 w-5" />
+                  </a>
+                ) : (
+                  <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
+                )}
               </div>
               
               {(p as any).tagline && (
